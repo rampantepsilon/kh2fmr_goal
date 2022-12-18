@@ -1,4 +1,4 @@
-# kh2fmr_goal
+# KH2FMR Hitlist Tracker
 
 A new Flutter project.
 
