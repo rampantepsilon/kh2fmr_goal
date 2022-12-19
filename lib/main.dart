@@ -8,7 +8,7 @@ void main() async {
   await windowManager.ensureInitialized();
 
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(1600, 250),
+    size: Size(1600, 255),
     center: true,
   );
   windowManager.waitUntilReadyToShow(windowOptions,
@@ -26,6 +26,16 @@ class MyApp extends StatelessWidget {
       title: 'Kingdom Hearts 2 Randomizer Hitlist Tracker',
       theme: ThemeData(
         brightness: Brightness.dark,
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(
+              const Color.fromARGB(255, 0, 17, 255),
+            ),
+            foregroundColor: MaterialStateProperty.all(
+              const Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+        ),
       ),
       home: const SimpleDisplay(),
     );
@@ -44,7 +54,7 @@ class _SimpleDisplayState extends State<SimpleDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("KH2FMR Hitlist Tracker"),
+        title: const Text("KH2FMR Hitlist Tracker by RampantEpsilon"),
       ),
       body: const SimpleButtons(),
       drawer: Drawer(
@@ -63,7 +73,7 @@ class _SimpleDisplayState extends State<SimpleDisplay> {
               },
             ),
             ListTile(
-              title: const Text('Old'),
+              title: const Text('Worlds'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -92,7 +102,7 @@ class _OldDisplayState extends State<OldDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("KH2FMR Hitlist Tracker"),
+        title: const Text("KH2FMR Hitlist Tracker by RampantEpsilon"),
       ),
       body: const OldButtons(),
       drawer: Drawer(
@@ -111,7 +121,7 @@ class _OldDisplayState extends State<OldDisplay> {
               },
             ),
             ListTile(
-              title: const Text('Old'),
+              title: const Text('Worlds'),
               onTap: () {
                 Navigator.push(
                   context,

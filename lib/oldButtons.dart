@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, file_names, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:math';
 
 bool _1disabled = false;
@@ -50,7 +51,24 @@ class _OldButtonsState extends State<OldButtons> {
           children: [
             const Text("Current Seed: "),
             Text(shownWorld.map((i) => i.toString()).join(",")),
-            const Text('         '),
+            const Text('     |     '),
+            TextButton(
+              onPressed: () async {
+                var seed = shownWorld.map((i) => i.toString()).join(",");
+                await Clipboard.setData(ClipboardData(text: seed));
+              },
+              child: const Text("Copy Seed"),
+            ),
+            TextButton(
+              onPressed: () async {
+                ClipboardData? seed =
+                    await Clipboard.getData(Clipboard.kTextPlain);
+                String? seedText = seed?.text;
+                seedInput.text = seedText!;
+              },
+              child: const Text("Paste Seed"),
+            ),
+            const Text('     |     '),
             const Text('Enter Custom Seed'),
             Container(
               padding: const EdgeInsets.only(left: 5),
