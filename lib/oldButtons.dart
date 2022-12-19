@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SimpleButtons extends StatefulWidget {
-  const SimpleButtons({super.key});
+class OldButtons extends StatefulWidget {
+  const OldButtons({super.key});
 
   @override
-  State<SimpleButtons> createState() => _SimpleButtonsState();
+  State<OldButtons> createState() => _OldButtonsState();
 }
 
-class _SimpleButtonsState extends State<SimpleButtons> {
+class _OldButtonsState extends State<OldButtons> {
   bool _1disabled = false;
   bool _2disabled = false;
   bool _3disabled = false;
@@ -30,7 +30,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/1.png',
+        'images/Old/1.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -42,7 +42,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/1.png',
+              'images/Old/1.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -64,7 +64,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/2.png',
+        'images/Old/2.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -76,7 +76,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/2.png',
+              'images/Old/2.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -98,7 +98,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/3.png',
+        'images/Old/3.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -110,7 +110,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/3.png',
+              'images/Old/3.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -132,7 +132,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/4.png',
+        'images/Old/4.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -144,7 +144,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/4.png',
+              'images/Old/4.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -166,7 +166,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/5.png',
+        'images/Old/5.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -178,7 +178,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/5.png',
+              'images/Old/5.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -200,7 +200,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/6.png',
+        'images/Old/6.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -212,7 +212,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/6.png',
+              'images/Old/6.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -234,7 +234,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/7.png',
+        'images/Old/7.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -246,7 +246,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/7.png',
+              'images/Old/7.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -268,7 +268,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/8.png',
+        'images/Old/8.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -280,7 +280,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/8.png',
+              'images/Old/8.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -302,7 +302,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/9.png',
+        'images/Old/9.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -314,7 +314,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/9.png',
+              'images/Old/9.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -336,7 +336,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/10.png',
+        'images/Old/10.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -348,7 +348,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/10.png',
+              'images/Old/10.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -370,7 +370,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/11.png',
+        'images/Old/11.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -382,7 +382,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/11.png',
+              'images/Old/11.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -404,7 +404,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/12.png',
+        'images/Old/12.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -416,7 +416,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/12.png',
+              'images/Old/12.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -438,7 +438,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       width: 100,
       height: 100,
       child: Image.asset(
-        'images/Simple/13.png',
+        'images/Old/13.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -450,7 +450,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/13.png',
+              'images/Old/13.png',
               filterQuality: FilterQuality.medium,
             ),
           ),
@@ -472,7 +472,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
       height: 100,
       padding: const EdgeInsets.all(5),
       child: Image.asset(
-        'images/Simple/14.png',
+        'images/Old/14.png',
         filterQuality: FilterQuality.medium,
       ),
     );
@@ -484,7 +484,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
             width: 90,
             height: 90,
             child: Image.asset(
-              'images/Simple/14.png',
+              'images/Old/14.png',
               filterQuality: FilterQuality.medium,
             ),
           ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 import 'simpleButtons.dart';
+import 'oldButtons.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
 
   WindowOptions windowOptions = const WindowOptions(
-    size: Size(1500, 200),
+    size: Size(1600, 250),
     center: true,
   );
   windowManager.waitUntilReadyToShow(windowOptions,
@@ -22,14 +23,104 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kingdom Hearts 2 Randomizer Goal-Driven Tracker',
+      title: 'Kingdom Hearts 2 Randomizer Hitlist Tracker',
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home: Scaffold(
-        body: ListView(
-          children: const [
-            SimpleButtons(),
+      home: SimpleDisplay(),
+    );
+  }
+}
+
+class SimpleDisplay extends StatefulWidget {
+  const SimpleDisplay({super.key});
+
+  @override
+  State<SimpleDisplay> createState() => _SimpleDisplayState();
+}
+
+class _SimpleDisplayState extends State<SimpleDisplay> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("KH2FMR Hitlist Tracker"),
+      ),
+      body: const SimpleButtons(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              title: const Text('Simple'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SimpleDisplay(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Old'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OldDisplay(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class OldDisplay extends StatefulWidget {
+  const OldDisplay({super.key});
+
+  @override
+  State<OldDisplay> createState() => _OldDisplayState();
+}
+
+class _OldDisplayState extends State<OldDisplay> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("KH2FMR Hitlist Tracker"),
+      ),
+      body: const OldButtons(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              title: const Text('Simple'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SimpleDisplay(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Old'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OldDisplay(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
