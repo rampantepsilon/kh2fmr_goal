@@ -18,6 +18,7 @@ bool _12disabled = false;
 bool _13disabled = false;
 bool _14disabled = false;
 List<int> shownWorld = [];
+List<String> holder = [];
 void genSeed() {
   Random random = Random();
   while (shownWorld.length < 6) {
@@ -26,6 +27,7 @@ void genSeed() {
       shownWorld.add(random_number);
     }
   }
+  shownWorld.sort();
 }
 
 class OldButtons extends StatefulWidget {
@@ -37,6 +39,7 @@ class OldButtons extends StatefulWidget {
 
 class _OldButtonsState extends State<OldButtons> {
   bool _seedSet = false;
+  final seedInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +50,38 @@ class _OldButtonsState extends State<OldButtons> {
           children: [
             const Text("Current Seed: "),
             Text(shownWorld.map((i) => i.toString()).join(",")),
+            const Text('         '),
+            const Text('Enter Custom Seed'),
+            Container(
+              padding: const EdgeInsets.only(left: 5),
+              width: 150,
+              height: 15,
+              child: TextFormField(
+                controller: seedInput,
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                shownWorld = [];
+                holder = seedInput.text.split(",");
+                /*showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      content: Text(holder[0]),
+                    );
+                  },
+                );*/
+                for (var i = 0; i < holder.length; i++) {
+                  shownWorld.add(int.parse(holder[i]));
+                  setState(() => {_seedSet = true});
+                }
+              },
+              child: const Icon(Icons.send),
+            )
           ],
         ),
         OldData(
@@ -83,6 +118,7 @@ class _OldButtonsState extends State<OldButtons> {
                   _14disabled = false;
                   _seedSet = true;
                 });
+                seedInput.text = '';
               },
               child: const Text("Reset Tracker"),
             ),
@@ -584,142 +620,184 @@ class _OldDataState extends State<OldData> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         !shownWorld.contains(1)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _1disabled = !_1disabled;
-                  });
-                },
-                child: _1disabled ? d1 : a1,
+            ? Tooltip(
+                message: 'Space Paranoids',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _1disabled = !_1disabled;
+                    });
+                  },
+                  child: _1disabled ? d1 : a1,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(2)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _2disabled = !_2disabled;
-                  });
-                },
-                child: _2disabled ? d2 : a2,
+            ? Tooltip(
+                message: 'Port Royal',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _2disabled = !_2disabled;
+                    });
+                  },
+                  child: _2disabled ? d2 : a2,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(3)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _3disabled = !_3disabled;
-                  });
-                },
-                child: _3disabled ? d3 : a3,
+            ? Tooltip(
+                message: 'Twilight Town',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _3disabled = !_3disabled;
+                    });
+                  },
+                  child: _3disabled ? d3 : a3,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(4)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _4disabled = !_4disabled;
-                  });
-                },
-                child: _4disabled ? d4 : a4,
+            ? Tooltip(
+                message: 'Olympus Colusseum',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _4disabled = !_4disabled;
+                    });
+                  },
+                  child: _4disabled ? d4 : a4,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(5)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _5disabled = !_5disabled;
-                  });
-                },
-                child: _5disabled ? d5 : a5,
+            ? Tooltip(
+                message: 'Halloween Town',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _5disabled = !_5disabled;
+                    });
+                  },
+                  child: _5disabled ? d5 : a5,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(6)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _6disabled = !_6disabled;
-                  });
-                },
-                child: _6disabled ? d6 : a6,
+            ? Tooltip(
+                message: 'Land of Dragons',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _6disabled = !_6disabled;
+                    });
+                  },
+                  child: _6disabled ? d6 : a6,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(7)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _7disabled = !_7disabled;
-                  });
-                },
-                child: _7disabled ? d7 : a7,
+            ? Tooltip(
+                message: 'The World That Never Was',
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _7disabled = !_7disabled;
+                    });
+                  },
+                  child: _7disabled ? d7 : a7,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(8)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _8disabled = !_8disabled;
-                  });
-                },
-                child: _8disabled ? d8 : a8,
+            ? Tooltip(
+                message: "Beast's Castle",
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _8disabled = !_8disabled;
+                    });
+                  },
+                  child: _8disabled ? d8 : a8,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(9)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _9disabled = !_9disabled;
-                  });
-                },
-                child: _9disabled ? d9 : a9,
+            ? Tooltip(
+                message: "Agrabah",
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _9disabled = !_9disabled;
+                    });
+                  },
+                  child: _9disabled ? d9 : a9,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(10)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _10disabled = !_10disabled;
-                  });
-                },
-                child: _10disabled ? d10 : a10,
+            ? Tooltip(
+                message: "Pride Lands",
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _10disabled = !_10disabled;
+                    });
+                  },
+                  child: _10disabled ? d10 : a10,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(11)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _11disabled = !_11disabled;
-                  });
-                },
-                child: _11disabled ? d11 : a11,
+            ? Tooltip(
+                message: "Hallow Bastion",
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _11disabled = !_11disabled;
+                    });
+                  },
+                  child: _11disabled ? d11 : a11,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(12)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _12disabled = !_12disabled;
-                  });
-                },
-                child: _12disabled ? d12 : a12,
+            ? Tooltip(
+                message: "Disney Castle",
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _12disabled = !_12disabled;
+                    });
+                  },
+                  child: _12disabled ? d12 : a12,
+                ),
               )
             : const Text(""),
         !shownWorld.contains(13)
-            ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _13disabled = !_13disabled;
-                  });
-                },
-                child: _13disabled ? d13 : a13,
+            ? Tooltip(
+                message: "Simulated Twilight Town",
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _13disabled = !_13disabled;
+                    });
+                  },
+                  child: _13disabled ? d13 : a13,
+                ),
               )
             : const Text(""),
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              _14disabled = !_14disabled;
-            });
-          },
-          child: _14disabled ? d14 : a14,
+        Tooltip(
+          message: "Final Xemnas",
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                _14disabled = !_14disabled;
+              });
+            },
+            child: _14disabled ? d14 : a14,
+          ),
         ),
       ],
     );
