@@ -59,15 +59,6 @@ class _SimpleButtonsState extends State<SimpleButtons> {
               },
               child: const Text("Copy Seed"),
             ),
-            TextButton(
-              onPressed: () async {
-                ClipboardData? seed =
-                    await Clipboard.getData(Clipboard.kTextPlain);
-                String? seedText = seed?.text;
-                seedInput.text = seedText!;
-              },
-              child: const Text("Paste Seed"),
-            ),
             const Text('     |     '),
             const Text('Enter Custom Seed'),
             Container(
@@ -81,6 +72,15 @@ class _SimpleButtonsState extends State<SimpleButtons> {
                 ),
               ),
             ),
+            TextButton(
+              onPressed: () async {
+                ClipboardData? seed =
+                    await Clipboard.getData(Clipboard.kTextPlain);
+                String? seedText = seed?.text;
+                seedInput.text = seedText!;
+              },
+              child: const Text("Paste Seed"),
+            ),
             InkWell(
               onTap: () {
                 shownWorld = [];
@@ -91,7 +91,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
                 }
               },
               child: const Icon(Icons.send),
-            )
+            ),
           ],
         ),
         SimpleData(
@@ -800,7 +800,7 @@ class _SimpleDataState extends State<SimpleData> {
                 ),
               )
             : const Text(""),
-        Tooltip(
+        /*Tooltip(
           message: "Final Xemnas",
           child: GestureDetector(
             onTap: () {
@@ -810,7 +810,7 @@ class _SimpleDataState extends State<SimpleData> {
             },
             child: _14disabled ? d14 : a14,
           ),
-        ),
+        ),*/
       ],
     );
   }

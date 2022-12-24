@@ -806,7 +806,7 @@ class _OldDataState extends State<OldData> {
                 ),
               )
             : const Text(""),
-        Tooltip(
+        /*Tooltip(
           message: "Final Xemnas",
           child: GestureDetector(
             onTap: () {
@@ -816,7 +816,7 @@ class _OldDataState extends State<OldData> {
             },
             child: _14disabled ? d14 : a14,
           ),
-        ),
+        ),*/
       ],
     );
   }
