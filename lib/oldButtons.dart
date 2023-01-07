@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:math';
 
+var randNum = 6;
+List<int> numList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
 bool _1disabled = false;
 bool _2disabled = false;
 bool _3disabled = false;
@@ -17,12 +20,12 @@ bool _10disabled = false;
 bool _11disabled = false;
 bool _12disabled = false;
 bool _13disabled = false;
-bool _14disabled = false;
+//bool _14disabled = false;
 List<int> shownWorld = [];
 List<String> holder = [];
 void genSeed() {
   Random random = Random();
-  while (shownWorld.length < 6) {
+  while (shownWorld.length < randNum) {
     int random_number = random.nextInt(13) + 1;
     if (!shownWorld.contains(random_number)) {
       shownWorld.add(random_number);
@@ -41,6 +44,7 @@ class OldButtons extends StatefulWidget {
 class _OldButtonsState extends State<OldButtons> {
   bool _seedSet = false;
   final seedInput = TextEditingController();
+  int dropdownValue = numList[6];
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +120,30 @@ class _OldButtonsState extends State<OldButtons> {
               },
               child: const Text("Generate Seed"),
             ),
+            const Text('    Number of Worlds: '),
+            DropdownButton<int>(
+              value: dropdownValue,
+              icon: const Icon(Icons.arrow_downward),
+              elevation: 16,
+              underline: Container(
+                height: 2,
+                color: const Color.fromARGB(255, 0, 17, 255),
+              ),
+              onChanged: (int? value) {
+                // This is called when the user selects an item.
+                setState(() {
+                  dropdownValue = value!;
+                  randNum = (13 - value!);
+                });
+              },
+              items: numList.map<DropdownMenuItem<int>>((int value) {
+                return DropdownMenuItem<int>(
+                  value: value,
+                  child: Text(value.toString()),
+                );
+              }).toList(),
+            ),
+            const Text('    '),
             TextButton(
               onPressed: () {
                 shownWorld = [];
@@ -133,10 +161,12 @@ class _OldButtonsState extends State<OldButtons> {
                   _11disabled = false;
                   _12disabled = false;
                   _13disabled = false;
-                  _14disabled = false;
+                  //_14disabled = false;
                   _seedSet = true;
                 });
                 seedInput.text = '';
+                dropdownValue = numList[6];
+                randNum = (13 - dropdownValue);
               },
               child: const Text("Reset Tracker"),
             ),
