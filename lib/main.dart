@@ -124,7 +124,8 @@ class _AboutDisplayState extends State<AboutDisplay> {
                 ),
               ),
               // ignore: prefer_adjacent_string_concatenation
-              Text(' - Add Ability to shuffle Data Orgs and Pink Door')
+              Text(' - Add Ability to shuffle Data Orgs and Pink Door' +
+                  '\n - Add Option to choose background image/color')
             ],
           ),
         ),
