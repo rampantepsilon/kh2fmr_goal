@@ -42,6 +42,7 @@ class OldButtons extends StatefulWidget {
 }
 
 class _OldButtonsState extends State<OldButtons> {
+  // ignore: unused_field
   bool _seedSet = false;
   final seedInput = TextEditingController();
   int dropdownValue = numList[6];
@@ -133,7 +134,7 @@ class _OldButtonsState extends State<OldButtons> {
                 // This is called when the user selects an item.
                 setState(() {
                   dropdownValue = value!;
-                  randNum = (13 - value!);
+                  randNum = (13 - value);
                 });
               },
               items: numList.map<DropdownMenuItem<int>>((int value) {
