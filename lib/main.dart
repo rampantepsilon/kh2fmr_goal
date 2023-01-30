@@ -4,6 +4,9 @@ import 'simpleButtons.dart';
 import 'oldButtons.dart';
 import 'superbosses.dart';
 
+var backgroundTF = false;
+const title = "KH2FMR Pink Door Hitlist Tracker by RampantEpsilon v2.1.0";
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
@@ -19,7 +22,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -51,35 +53,90 @@ class SimpleDisplay extends StatefulWidget {
 }
 
 class _SimpleDisplayState extends State<SimpleDisplay> {
+  displayCalc() {
+    if (backgroundTF == true) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text(title),
+          ),
+        ),
+        body: Stack(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Image.asset(
+                'images/BG.png',
+                repeat: ImageRepeat.repeat,
+              ),
+            ),
+            Container(
+              color: const Color.fromARGB(80, 0, 0, 0),
+              child: const SimpleButtons(),
+            ),
+          ],
+        ),
+        drawer: DrawerData(
+          contextInfo: context,
+          context: context,
+        ),
+        floatingActionButton: SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            backgroundColor: const Color.fromARGB(255, 46, 46, 46),
+            onPressed: () {
+              backgroundTF = false;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SimpleDisplay(),
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text(title),
+          ),
+        ),
+        body: Stack(
+          children: const [
+            SimpleButtons(),
+          ],
+        ),
+        drawer: DrawerData(
+          contextInfo: context,
+          context: context,
+        ),
+        floatingActionButton: SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            onPressed: () {
+              backgroundTF = true;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SimpleDisplay(),
+                ),
+              );
+            },
+            child: Image.asset('images/BG.png'),
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text("KH2FMR Pink Door Hitlist Tracker by RampantEpsilon"),
-        ),
-      ),
-      body: Stack(
-        children: [
-          /*Container(
-            width: double.infinity,
-            height: double.infinity,
-            child: Image.asset(
-              'images/BG.png',
-              repeat: ImageRepeat.repeat,
-            ),
-          ),*/
-          Container(
-            //color: Color.fromARGB(80, 0, 0, 0),
-            child: const SimpleButtons(),
-          ),
-        ],
-      ),
-      drawer: DrawerData(
-        contextInfo: context,
-        context: context,
-      ),
-    );
+    return displayCalc();
   }
 }
 
@@ -124,8 +181,7 @@ class _AboutDisplayState extends State<AboutDisplay> {
                 ),
               ),
               // ignore: prefer_adjacent_string_concatenation
-              Text(' - Add Ability to shuffle Data Orgs and Pink Door' +
-                  '\n - Add Option to choose background image/color')
+              Text(' - Add Ability to shuffle Data Orgs and Pink Door')
             ],
           ),
         ),
@@ -138,7 +194,7 @@ class _AboutDisplayState extends State<AboutDisplay> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("KH2FMR Pink Door Hitlist Tracker by RampantEpsilon"),
+          child: Text(title),
         ),
       ),
       body: containerText(),
@@ -158,35 +214,90 @@ class OldDisplay extends StatefulWidget {
 }
 
 class _OldDisplayState extends State<OldDisplay> {
+  displayCalc() {
+    if (backgroundTF == true) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text(title),
+          ),
+        ),
+        body: Stack(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Image.asset(
+                'images/BG.png',
+                repeat: ImageRepeat.repeat,
+              ),
+            ),
+            Container(
+              color: const Color.fromARGB(80, 0, 0, 0),
+              child: const OldButtons(),
+            ),
+          ],
+        ),
+        drawer: DrawerData(
+          contextInfo: context,
+          context: context,
+        ),
+        floatingActionButton: SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            backgroundColor: const Color.fromARGB(255, 46, 46, 46),
+            onPressed: () {
+              backgroundTF = false;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OldDisplay(),
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text(title),
+          ),
+        ),
+        body: Stack(
+          children: const [
+            OldButtons(),
+          ],
+        ),
+        drawer: DrawerData(
+          contextInfo: context,
+          context: context,
+        ),
+        floatingActionButton: SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            onPressed: () {
+              backgroundTF = true;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OldDisplay(),
+                ),
+              );
+            },
+            child: Image.asset('images/BG.png'),
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text("KH2FMR Pink Door Hitlist Tracker by RampantEpsilon"),
-        ),
-      ),
-      body: Stack(
-        children: [
-          /*Container(
-            width: double.infinity,
-            height: double.infinity,
-            child: Image.asset(
-              'images/BG.png',
-              repeat: ImageRepeat.repeat,
-            ),
-          ),*/
-          Container(
-            //color: Color.fromARGB(80, 0, 0, 0),
-            child: const OldButtons(),
-          ),
-        ],
-      ),
-      drawer: DrawerData(
-        contextInfo: context,
-        context: context,
-      ),
-    );
+    return displayCalc();
   }
 }
 
@@ -198,35 +309,90 @@ class DataDisplay extends StatefulWidget {
 }
 
 class _DataDisplayState extends State<DataDisplay> {
+  displayCalc() {
+    if (backgroundTF == true) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text(title),
+          ),
+        ),
+        body: Stack(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Image.asset(
+                'images/BG.png',
+                repeat: ImageRepeat.repeat,
+              ),
+            ),
+            Container(
+              color: const Color.fromARGB(80, 0, 0, 0),
+              child: const DataButtons(),
+            ),
+          ],
+        ),
+        drawer: DrawerData(
+          contextInfo: context,
+          context: context,
+        ),
+        floatingActionButton: SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            backgroundColor: const Color.fromARGB(255, 46, 46, 46),
+            onPressed: () {
+              backgroundTF = false;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DataDisplay(),
+                ),
+              );
+            },
+          ),
+        ),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text(title),
+          ),
+        ),
+        body: Stack(
+          children: const [
+            DataButtons(),
+          ],
+        ),
+        drawer: DrawerData(
+          contextInfo: context,
+          context: context,
+        ),
+        floatingActionButton: SizedBox(
+          height: 30,
+          width: 30,
+          child: FloatingActionButton(
+            onPressed: () {
+              backgroundTF = true;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DataDisplay(),
+                ),
+              );
+            },
+            child: Image.asset('images/BG.png'),
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text("KH2FMR Pink Door Hitlist Tracker by RampantEpsilon"),
-        ),
-      ),
-      body: Stack(
-        children: [
-          /*Container(
-            width: double.infinity,
-            height: double.infinity,
-            child: Image.asset(
-              'images/BG.png',
-              repeat: ImageRepeat.repeat,
-            ),
-          ),*/
-          Container(
-            //color: Color.fromARGB(80, 0, 0, 0),
-            child: const DataButtons(),
-          ),
-        ],
-      ),
-      drawer: DrawerData(
-        contextInfo: context,
-        context: context,
-      ),
-    );
+    return displayCalc();
   }
 }
 

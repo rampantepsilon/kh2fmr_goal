@@ -90,14 +90,6 @@ class _OldButtonsState extends State<OldButtons> {
               onTap: () {
                 shownWorld = [];
                 holder = seedInput.text.split(",");
-                /*showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      content: Text(holder[0]),
-                    );
-                  },
-                );*/
                 for (var i = 0; i < holder.length; i++) {
                   shownWorld.add(int.parse(holder[i]));
                   setState(() => {_seedSet = true});

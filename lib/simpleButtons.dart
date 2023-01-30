@@ -6,6 +6,7 @@ import 'dart:math';
 
 var randNum = 6;
 List<int> numList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+List<String> list = ['None', /*'Green',*/ 'Image'];
 
 bool _1disabled = false;
 bool _2disabled = false;
@@ -46,6 +47,7 @@ class _SimpleButtonsState extends State<SimpleButtons> {
   bool _seedSet = false;
   final seedInput = TextEditingController();
   int dropdownValue = numList[6];
+  String backgroundValue = list.first;
 
   @override
   Widget build(BuildContext context) {
